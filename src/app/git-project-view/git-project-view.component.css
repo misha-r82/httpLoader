@@ -1,7 +1,12 @@
-.info
+.floating
 {
   position: relative;
-  float: right;
+  float: left;
+  margin-left: 5px;
+}
+.itemContainer
+{
+  margin: 10px;
 }
 .clr
 {
