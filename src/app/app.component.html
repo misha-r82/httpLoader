@@ -1,2 +1,5 @@
 <button (click)="btnLoadClick()">Load</button>
-<div>{{content}}</div>
+<input type="text" placeholder="grid" (input)="onSearchMaskChanged($event)">
+<div *ngFor="let item of items">
+<app-git-project-view [item]="item"></app-git-project-view>
+</div>

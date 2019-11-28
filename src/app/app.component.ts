@@ -1,5 +1,7 @@
-import { Component } from '@angular/core';
+import {Component, EventEmitter, Output} from '@angular/core';
 import {GitSearchService} from './git-search.service';
+import {GitItem} from './gitItem.model';
+
 
 @Component({
   selector: 'app-root',
@@ -8,14 +10,21 @@ import {GitSearchService} from './git-search.service';
 })
 export class AppComponent
 {
-  content : string = 'content';
-
-  constructor(private httpLoader : GitSearchService){}
+  items: GitItem[];
+  searchMask: string;
+  @Output() maskChanged = new EventEmitter<boolean>();
+  constructor(private httpLoader: GitSearchService){}
   btnLoadClick()
   {
-    this.httpLoader.loadAddr("https://www.avito.ru/rossiya").subscribe((res)=>{
-      this.content = res;
+    this.httpLoader.loadAddr(this.searchMask).subscribe((res)=>
+    {
+      this.items = res;
       console.log(res);
-    })
+    });
+  }
+
+  onSearchMaskChanged($event: Event)
+  {
+    this.searchMask = (event.target as HTMLInputElement).value;
   }
 }

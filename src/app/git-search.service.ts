@@ -7,9 +7,9 @@ export class GitSearchService {
 
   constructor(private http: HttpClient) { }
 
-  public loadAddr(url: string): Observable<any>
+  public loadAddr(searchMask: string): Observable<any>
   {
-    let httpPars = new HttpParams().set('q', "grid");
+    const httpPars = new HttpParams().set('q', searchMask);
     return this.http.get('search/repositories', {params: httpPars});
 
 
