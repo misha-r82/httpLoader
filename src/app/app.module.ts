@@ -7,11 +7,13 @@ import {HTTP_INTERCEPTORS, HttpClient, HttpClientModule} from '@angular/common/h
 import {GIT_URL, GIT_URL_TOKEN} from './config';
 import {GitInterceptorService} from './git-interceptor.service';
 import { GitProjectViewComponent } from './git-project-view/git-project-view.component';
+import { ResultFilterPipe } from './result-filter-pipe.pipe';
 
 @NgModule({
   declarations: [
     AppComponent,
-    GitProjectViewComponent
+    GitProjectViewComponent,
+    ResultFilterPipe
   ],
   imports: [
     BrowserModule, HttpClientModule

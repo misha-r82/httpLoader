@@ -11,8 +11,5 @@ export class GitSearchService {
   {
     const httpPars = new HttpParams().set('q', searchMask);
     return this.http.get('search/repositories', {params: httpPars});
-
-
-
   }
 }

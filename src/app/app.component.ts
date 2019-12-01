@@ -12,7 +12,8 @@ export class AppComponent
 {
   items: GitItem[];
   searchMask: string;
-  @Output() maskChanged = new EventEmitter<boolean>();
+  localSearch : string;
+//  @Output() maskChanged = new EventEmitter<boolean>();
   constructor(private httpLoader: GitSearchService){}
   btnLoadClick()
   {
@@ -25,6 +26,13 @@ export class AppComponent
 
   onSearchMaskChanged($event: Event)
   {
+    //console.log("Sarch");
     this.searchMask = (event.target as HTMLInputElement).value;
+  }
+
+  onLocalSearchChanged($event: Event)
+  {
+    //console.log("localSarch");
+    this.localSearch = (event.target as HTMLInputElement).value;
   }
 }
