@@ -8,6 +8,7 @@ import {GitItem} from './gitItem.model';
 export class ChechedFilterPipe implements PipeTransform {
 
   transform(items: GitItem[], selectChecked : boolean): any {
+    //console.log(`${selectChecked} pipe`);
     if (!items) return items;
     return items.filter(i=>{return  i.selected === selectChecked});
   }

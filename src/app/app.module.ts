@@ -9,13 +9,15 @@ import {GitInterceptorService} from './git-interceptor.service';
 import { GitProjectViewComponent } from './git-project-view/git-project-view.component';
 import { ResultFilterPipe } from './result-filter-pipe.pipe';
 import { ChechedFilterPipe } from './cheched-filter.pipe';
+import { ProjectListViewComponent } from './project-list-view/project-list-view.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     GitProjectViewComponent,
     ResultFilterPipe,
-    ChechedFilterPipe
+    ChechedFilterPipe,
+    ProjectListViewComponent
   ],
   imports: [
     BrowserModule, HttpClientModule

@@ -1,0 +1,7 @@
+<section class="content">
+  <span>поиск по списку</span> <input type="text" (input)="onLocalSearchChanged($event)">
+  <div *ngFor="let item of items |chechedFilter:showChecked | resultFilter:localSearch; ">
+    <app-git-project-view [item]="item"></app-git-project-view>
+  </div>
+</section>
+

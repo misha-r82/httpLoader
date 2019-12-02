@@ -7,11 +7,15 @@ import {GitItem} from '../gitItem.model';
   templateUrl: './git-project-view.component.html',
   styleUrls: ['./git-project-view.component.css']
 })
-export class GitProjectViewComponent {
+export class GitProjectViewComponent implements OnInit{
 @Input() item: GitItem;
 
   onSelectCick($event: Event)
   {
     this.item.selected = (event.target as HTMLInputElement).checked;
+  }
+
+  ngOnInit(): void {
+    console.log("init!");
   }
 }

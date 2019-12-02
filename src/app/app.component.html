@@ -1,6 +1,6 @@
 <button (click)="btnLoadClick()">Load</button>
 <input type="text" value="grid" (input)="onSearchMaskChanged($event)">
-<input type="text" (input)="onLocalSearchChanged($event)">
+
 <table>
   <thead>
     <td>
@@ -12,14 +12,10 @@
   </thead>
   <tr>
     <td class="semicolmn">
-      <div *ngFor="let item of items |chechedFilter:false | resultFilter:localSearch ">
-        <app-git-project-view [item]="item"></app-git-project-view>
-      </div>
+      <app-project-list-view [items] = "items" [showChecked]="false"></app-project-list-view>
     </td>
     <td class="semicolmn">
-      <div *ngFor="let item of items |chechedFilter:true | resultFilter:localSearch ">
-        <app-git-project-view [item]="item"></app-git-project-view>
-      </div>
+      <app-project-list-view [items] = "items" [showChecked]="true"></app-project-list-view>
     </td>
   </tr>
 </table>
