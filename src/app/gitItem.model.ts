@@ -3,5 +3,6 @@ export class GitItem {
   public gitUrl: string;
   public stargazersCount: number;
   public size: number;
+  selected = false;
 
 }

@@ -8,12 +8,14 @@ import {GIT_URL, GIT_URL_TOKEN} from './config';
 import {GitInterceptorService} from './git-interceptor.service';
 import { GitProjectViewComponent } from './git-project-view/git-project-view.component';
 import { ResultFilterPipe } from './result-filter-pipe.pipe';
+import { ChechedFilterPipe } from './cheched-filter.pipe';
 
 @NgModule({
   declarations: [
     AppComponent,
     GitProjectViewComponent,
-    ResultFilterPipe
+    ResultFilterPipe,
+    ChechedFilterPipe
   ],
   imports: [
     BrowserModule, HttpClientModule

@@ -10,4 +10,8 @@ import {GitItem} from '../gitItem.model';
 export class GitProjectViewComponent {
 @Input() item: GitItem;
 
+  onSelectCick($event: Event)
+  {
+    this.item.selected = (event.target as HTMLInputElement).checked;
+  }
 }

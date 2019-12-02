@@ -1,6 +1,28 @@
 <button (click)="btnLoadClick()">Load</button>
 <input type="text" value="grid" (input)="onSearchMaskChanged($event)">
 <input type="text" (input)="onLocalSearchChanged($event)">
-<div *ngFor="let item of items | resultFilter:localSearch ">
-<app-git-project-view [item]="item"></app-git-project-view>
-</div>
+<table>
+  <thead>
+    <td>
+      <H3>Найденые элементы</H3>
+    </td>
+    <td>
+      <H3>Выбраные элементы</H3>
+    </td>
+  </thead>
+  <tr>
+    <td class="semicolmn">
+      <div *ngFor="let item of items |chechedFilter:false | resultFilter:localSearch ">
+        <app-git-project-view [item]="item"></app-git-project-view>
+      </div>
+    </td>
+    <td class="semicolmn">
+      <div *ngFor="let item of items |chechedFilter:true | resultFilter:localSearch ">
+        <app-git-project-view [item]="item"></app-git-project-view>
+      </div>
+    </td>
+  </tr>
+</table>
+
+
+
