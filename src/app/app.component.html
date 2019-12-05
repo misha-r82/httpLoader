@@ -1,6 +1,10 @@
-<button (click)="btnLoadClick()">Load</button>
-<input type="text" value="grid" (input)="onSearchMaskChanged($event)">
+<mat-toolbar>
+  <button  mat-button (click)="btnLoadClick()">Load</button>
+  <mat-form-field>
+    <input matInput type="text" value="grid" (input)="onSearchMaskChanged($event)">
+  </mat-form-field>
 
+</mat-toolbar>
 <table>
   <thead>
     <td>

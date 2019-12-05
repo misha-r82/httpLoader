@@ -10,6 +10,9 @@ import { GitProjectViewComponent } from './git-project-view/git-project-view.com
 import { ResultFilterPipe } from './result-filter-pipe.pipe';
 import { ChechedFilterPipe } from './cheched-filter.pipe';
 import { ProjectListViewComponent } from './project-list-view/project-list-view.component';
+import {SharedModule} from './shared/shared.module';
+import {MatCardModule, MatInputModule, MatToolbarModule} from '@angular/material';
+
 
 @NgModule({
   declarations: [
@@ -20,7 +23,7 @@ import { ProjectListViewComponent } from './project-list-view/project-list-view.
     ProjectListViewComponent
   ],
   imports: [
-    BrowserModule, HttpClientModule
+    BrowserModule, HttpClientModule, SharedModule, MatCardModule, MatInputModule
   ],
   providers: [GitSearchService,
     {provide: GIT_URL_TOKEN, useValue: GIT_URL},

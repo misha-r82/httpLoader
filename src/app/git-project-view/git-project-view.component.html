@@ -1,4 +1,8 @@
-<div>{{item.description}}</div>
+<mat-card>
+  <mat-card-title>
+    <div>{{item.description}}</div>
+  </mat-card-title>
+
 <div class="itemContainer">
     <div class="floating">размер </div>
     <div class="floating">{{item.size}}</div>
@@ -8,3 +12,4 @@
   <input type="checkbox" class="floating" [checked]="item.selected" (click)="onSelectCick($event)">
 </div>
 <div class="clr"></div>
+</mat-card>

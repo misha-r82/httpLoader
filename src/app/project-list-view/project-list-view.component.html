@@ -1,6 +1,10 @@
 <section class="content">
-  <span>поиск по списку</span> <input type="text" (input)="onLocalSearchChanged($event)">
-  <div *ngFor="let item of items |chechedFilter:showChecked | resultFilter:localSearch; ">
+  <span>поиск по списку</span>
+  <mat-form-field>
+    <input matInput type="text" (input)="onLocalSearchChanged($event)">
+  </mat-form-field>
+
+  <div *ngFor="let item of items |chechedFilter:showChecked | resultFilter:localSearch;  let isOdd = odd">
     <app-git-project-view [item]="item"></app-git-project-view>
   </div>
 </section>
